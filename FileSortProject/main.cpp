@@ -87,20 +87,6 @@ void user_write_file(const string &ref_path, vector<string> &S){
     file_output.close();
 }
 
-//Функция сортировки Пузырьком
-void user_BubbleSort_file(vector<string> &S){
-    decltype(S.size()) N = S.size();
-    for (int i = 0; i < N - 1; i++){
-	for (int j = i + 1; j < N; j++) {
-            if(S[i]>S[j]){
-                string tmp = S[i];
-                S[i]=S[j];
-                S[j]=tmp;
-            }
-	}
-    }
-}
-
 //Функция сортировки Выбором
 void user_SelectionSort_file(vector<string> &S){
     decltype(S.size()) n = S.size();
@@ -142,7 +128,6 @@ int main() {
     //Выбор остается на сортировке Выбором.
     //Сложность алгоритма не изменилась. О(n^2)
     user_SelectionSort_file(line);
-    //user_BubbleSort_file(line);
     user_write_file(path_to_write, line);
    
     return 0;
